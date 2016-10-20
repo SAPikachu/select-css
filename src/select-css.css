@@ -8,32 +8,38 @@
 /* This is the native select, we're making everything but the text invisible so
  * we can see the button styles in the wrapper */
 .custom-select select {
-	width: 100%;
-	margin: 0;
-	outline: none;
-	padding: .6em .8em .5em .8em;
+    width: 100%;
+    margin: 0;
+    outline: none;
+    padding: .6em .8em .5em .8em;
 
-	/* Prefixed box-sizing rules necessary for older browsers */
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+    /* Prefixed box-sizing rules necessary for older browsers */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 
-	/* Font size must be 16px to prevent iOS page zoom on focus */
-	font-size: 16px;
+    /* Font size must be 16px to prevent iOS page zoom on focus */
+    font-size: 16px;
 }
 
 
 /* Custom arrow sits on top of the select - could be an image, SVG, icon font,
  * etc. or the arrow could just baked into the bg image on the select. */
 .custom-select::after {
-	content: " ";
-	position: absolute;
-	top: 50%;
-	right: 1em;
-	z-index: 2;
-	/* These hacks make the select behind the arrow clickable in some browsers */
-	pointer-events: none;
-	display: none;
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 0.4em;
+    z-index: 2;
+    pointer-events: none;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…BvaW50cz0iNTMwLjg3NCwwLjUgMjY1Ljg3LDQ1OS41IDAuODY2LDAuNSAiLz4NCjwvc3ZnPg0K);
+    display: none;
+    width: 8px;
+    height: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
 }
 
 @supports ( -webkit-appearance: none ) or ( appearance: none )
